@@ -28,4 +28,4 @@ for script in "${SCRIPTS[@]}"; do
   touch "$state_file"
 done
 
-echo "All migrations executed successfully!"
+echo "All migrations executed successfully! Please reboot your system."
