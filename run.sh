@@ -28,4 +28,7 @@ for script in "${SCRIPTS[@]}"; do
   touch "$state_file"
 done
 
+stow -v -d ./dotfiles -t ~ */
+echo "✅ Updated dotfiles"
+
 echo "All migrations executed successfully! Please reboot your system."
