@@ -21,7 +21,7 @@ for script in "${SCRIPTS[@]}"; do
     continue
   fi
 
-  bash "$script"
+  bash "$script" > /dev/null
   echo "✅ Applied $script_name"
 
   # mark the script as applied
