@@ -1,0 +1,116 @@
+[
+  {
+    "clock": {
+      "format": "{:%b %d, %I:%M %p}",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "clock#date": {
+      "format": "{:%Y-%b-%d}",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "custom/logo": {
+      "format": "󰣇 ",
+      "tooltip": true,
+      "tooltip-format": "btw",
+      "on-click": "nwg-bar"
+    },
+    "group/system": {
+      "modules": [
+        "custom/vbox",
+        "idle_inhibitor",
+		"power-profiles-daemon",
+        "pulseaudio",
+        "battery",
+      ],
+      "orientation": "horizontal"
+    },
+    "hyprland/workspaces": {
+      "all-outputs": true,
+      "disable-scroll": true,
+      "format": "{name}",
+      "warp-on-scroll": false
+    },
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": "󰅶 ",
+        "deactivated": "󰛊 "
+      }
+    },
+    "layer": "top",
+    "modules-center": [
+      "clock"
+    ],
+    "modules-left": [
+      "custom/logo",
+      "hyprland/workspaces",
+	  "custom/host"
+    ],
+    "modules-right": [
+      "temperature",
+      "tray",
+      "group/system",
+      "custom/notifications",
+    ],
+    "position": "top",
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-icons": {
+        "default": [
+          "",
+          "",
+          ""
+        ],
+      },
+      "format-muted": " ",
+      "format-source": " {volume}%",
+      "format-source-muted": "",
+      "on-click": "pavucontrol"
+    },
+    "spacing": 4,
+    "temperature": {
+      "hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
+      "critical-threshold": 90,
+      "format": "{temperatureC}°C",
+      "tooltip": true
+    },
+    "tray": {
+      "spacing": 10
+    },
+    "battery": {
+      "interval": 5,
+      "states": {
+        "warning": 30,
+        "critical": 15
+      },
+      "format": " {icon} {capacity}% ",
+      "format-charging": "󰂄 {capacity}% ",
+      "format-icons": ["󰁺", "󰁻", "󰁾", "󰂁", "󰁹"],
+      "max-length": 25
+    },
+    "custom/notifications": {
+      "format": "",
+      "on-click": "swaync-client -t"
+    },
+	"power-profiles-daemon": {
+	  "format": "{icon}",
+	  "tooltip-format": "{profile}",
+	  "tooltip": true,
+	  "format-icons": {
+		"default": " ",
+		"performance": " ",
+		"balanced": " ",
+		"power-saver": " "
+	  }
+	},
+	"custom/host": {
+	  "exec": "cat /etc/hostname",
+	  "format": "| {text}  "
+	},
+	"custom/vbox": {
+	  "exec": "STATE=$(VBoxManage showvminfo 'max-ib2020' --machinereadable | awk -F= '/^VMState=/ {print $2}' | tr -d '\"'); if [ \"$STATE\" = \"running\" ]; then echo '{\"text\":\"  \",\"tooltip\":\"VM Running\",\"class\":\"running\"}'; else echo '{\"text\":\"  \",\"tooltip\":\"VM Stopped\",\"class\":\"stopped\"}'; fi",
+	  "interval": 5,
+	  "return-type": "json"
+	}
+  }
+]

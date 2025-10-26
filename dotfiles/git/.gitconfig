@@ -1,0 +1,52 @@
+[core]
+    compression = 9
+    editor = nvim
+    pager = delta
+    whitespace = error
+    autocrlf = input
+
+[rerere]
+    enabled = true
+    autoupdate = true
+
+[init]
+    defaultBranch = main
+
+[commit]
+    gpgsign = true
+
+[merge]
+    tool = p4merge
+	renames = true
+
+[delta]
+    side-by-side = true
+
+[interactive]
+    diffFilter = delta --color-only
+
+[diff]
+    colorMoved = default
+	renameLimit = 999999
+
+[push]
+    autoSetupRemote = true
+    default = current
+
+[pull]
+    rebase = true
+
+[rebase]
+    autoStash = true
+
+[alias]
+  cleanup = ! git fetch --prune && git branch -vv | grep '\\[.*: gone\\]' | awk '{print $1}' | xargs --no-run-if-empty git branch -D
+
+[url "git@github.com:"]
+    insteadOf = "gh:"
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
