@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # "core" utils
-pacman -S dust \
-          fnm \
-          git-delta \
-          starship \
-          stow \
-       --noconfirm
+yay -S dust \
+       fnm \
+       git-delta \
+       starship \
+       stow \
+    --noconfirm

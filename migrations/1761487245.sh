@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
+# install yay
+sudo paru -S yay-bin --noconfirm
+
 # install base packages
-pacman -S sddm uwsm hyprland hyprlock hyprpaper hypridle hyprpolkitagent hyprpicker hyprshot hyprsunset --noconfirm
+yay -S sddm uwsm hyprland hyprlock hyprpaper hypridle hyprpolkitagent hyprpicker hyprshot hyprsunset --noconfirm
 
 # configure sddm
 echo -e "[General]\nSession=hyprland-uwsm" | tee -a /etc/sddm.conf

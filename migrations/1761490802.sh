@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # "core" apps
-pacman -S btrfs-assistant-git \
+yay -S btrfs-assistant-git \
           dbeaver-ce-jre-bin \
           docker \
           docker-buildx \
