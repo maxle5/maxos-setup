@@ -7,16 +7,10 @@ MIGRATIONS_DIR="./migrations"
 STATE_DIR="$HOME/.local/state/maxos/migrations"
 SCRIPTS=("$MIGRATIONS_DIR"/*.sh)
 
-# Ensure we're running as sudo
-if [ "$(id -u)" -ne 0 ]; then
-    sudo "$0" "$@"
-    exit 1
-fi
-
 echo "------------------------------------------"
 echo "Installing Updates"
 echo "------------------------------------------"
-sudo pacman -Syu --noconfirm
+sudo sudo pacman -Syu --noconfirm
 
 echo "------------------------------------------"
 echo "Running migrations"

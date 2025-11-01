@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # install yay
-sudo paru -S yay-bin --noconfirm
+paru -S yay-bin --noconfirm
 
 # install base packages
 yay -S sddm uwsm hyprland hyprlock hyprpaper hypridle hyprpolkitagent hyprpicker hyprshot hyprsunset --noconfirm
