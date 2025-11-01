@@ -18,8 +18,8 @@ yay -S dbeaver-ce-jre-bin \
        sourcegit-bin \
        spotify \
        visual-studio-code-bin \
-       wezterm-git \
        wofi \
        wofi-emoji \
     --noconfirm
 
+#      wezterm-git \
