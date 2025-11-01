@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-# "core" utils
+##########################################
+# Install "core" utilities               #
+##########################################
+
 yay -S dust \
        fnm \
        git-delta \

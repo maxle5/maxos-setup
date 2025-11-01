@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+##########################################
+# Configure/Install base environment     #
+##########################################
+
 # install yay
 paru -S yay-bin --noconfirm
 

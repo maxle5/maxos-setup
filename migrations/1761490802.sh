@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-# "core" apps
+##########################################
+# Install "core" applications            #
+##########################################
+
 yay -S dbeaver-ce-jre-bin \
        docker \
        docker-buildx \
