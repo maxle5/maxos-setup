@@ -14,6 +14,11 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 
 echo "------------------------------------------"
+echo "Installing Updates"
+echo "------------------------------------------"
+sudo pacman -Syu --noconfirm
+
+echo "------------------------------------------"
 echo "Running migrations"
 echo "------------------------------------------"
 
