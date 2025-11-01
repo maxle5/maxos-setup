@@ -6,7 +6,7 @@ yay -S dbeaver-ce-jre-bin \
        docker-buildx \
        dolphin \
        gimp \
-       google-chrome \ 
+       google-chrome \
        neovim \
        network-manager-applet \
        nosqlbooster-mongodb \
